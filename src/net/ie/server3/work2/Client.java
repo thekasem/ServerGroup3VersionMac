@@ -88,11 +88,11 @@ public class Client implements Runnable {
                         String[] splitMsg = messageIn.split("#");
                         System.out.println(splitMsg[0] + " " + splitMsg[1] + " " + splitMsg[2]);
                         if (splitMsg[0].equals("fine")) {
-                            String downloadPath = System.getProperty("user.home")+"//Download-from-server//";
+                            String downloadPath = System.getProperty("user.home")+"//Downloads//Download-from-server//";
                             File dir = new File(downloadPath);
                             if (!dir.exists()) {
                                 try {
-                                    System.out.println("Creating... directory " + System.getProperty("user.home")+"//Download-from-server");
+                                    System.out.println("Creating... directory " + downloadPath);
                                     dir.mkdir();
                                     System.out.println("The directory created");
                                 } catch (SecurityException securityException) {
