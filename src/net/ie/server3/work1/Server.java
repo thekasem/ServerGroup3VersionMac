@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package net.ie.sever3.work1;
+package net.ie.server3.work1;
 
 /**
  *
@@ -81,10 +81,11 @@ public class Server {
                     String[] splitMsg = messageIn.split("#");
                     System.out.println(splitMsg[0] + " " + splitMsg[1] + " " + splitMsg[2]);
                     if (splitMsg[0].equals("fine")) {
-                        File dir = new File("C:\\Download-from-server");
+                        String downloadPath = System.getProperty("user.home")+"//Downloads//Download-from-server//";
+                        File dir = new File(downloadPath);
                         if (!dir.exists()) {
                             try {
-                                System.out.println("Creating... directory C:\\Download-from-server");
+                                System.out.println("Creating... directory "+ downloadPath);
                                 dir.mkdir();
                                 System.out.println("The directory created");
                             } catch (SecurityException securityException) {
@@ -93,7 +94,7 @@ public class Server {
                             }
                         }
 
-                        File file = new File("c:\\Download-from-client\\recieved-" + splitMsg[2]);
+                        File file = new File(downloadPath + splitMsg[2]);
                         recieveFile(file, inputStream, Integer.parseInt(splitMsg[1]));
                         System.out.println("Download file successful");
                     }
