@@ -9,6 +9,7 @@ import java.io.*;
 import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static net.ie.server3.work2.Server3.socket;
 
 /**
  *
@@ -26,6 +27,7 @@ public class Client implements Runnable {
             thread2 = new Thread(this);
 //            socket = new Socket("192.168.10.233", 55555);
             socket = new Socket("localhost", 12121);
+            System.out.println("Please input 'sw' change to upload file.");
             thread1.start();
             thread2.start();
 
