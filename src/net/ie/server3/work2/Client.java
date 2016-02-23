@@ -52,6 +52,7 @@ public class Client implements Runnable {
                     dataInputStream = new DataInputStream(socket.getInputStream());
                     dataOutputStream = new DataOutputStream(socket.getOutputStream());
                     bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+                    System.out.print("send :> ");
                     printWriter = new PrintWriter(socket.getOutputStream(), true);
                     messageIn = bufferedReader.readLine();
 
@@ -67,7 +68,7 @@ public class Client implements Runnable {
                             System.out.println("File does not exist!");
                         }
                     } else {
-                        printWriter.println("Server says : " + messageIn);
+                        printWriter.println("Client says : " + messageIn);
                     }
                 } while (!messageIn.equals("bye"));
             } else {
