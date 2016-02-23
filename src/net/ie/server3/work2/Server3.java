@@ -52,7 +52,6 @@ public class Server3 implements Runnable {
                     dataInputStream = new DataInputStream(socket.getInputStream());
                     dataOutputStream = new DataOutputStream(socket.getOutputStream());
                     bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-                    System.out.print("send :> ");
                     printWriter = new PrintWriter(socket.getOutputStream(), true);
                     messageIn = bufferedReader.readLine();
 
@@ -70,7 +69,7 @@ public class Server3 implements Runnable {
                         }
                     } 
                     else {
-                        printWriter.println("\nServer says : " + messageIn);
+                        printWriter.println("Server says : " + messageIn);
                     }
                 } while (!messageIn.equals("bye"));
             } 
