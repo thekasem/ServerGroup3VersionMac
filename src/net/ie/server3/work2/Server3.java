@@ -70,7 +70,7 @@ public class Server3 implements Runnable {
                         }
                     } 
                     else {
-                        printWriter.println("Server says : " + messageIn);
+                        printWriter.println("\nServer says : " + messageIn);
                     }
                 } while (!messageIn.equals("bye"));
             } 

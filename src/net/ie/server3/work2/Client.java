@@ -68,7 +68,7 @@ public class Client implements Runnable {
                             System.out.println("File does not exist!");
                         }
                     } else {
-                        printWriter.println("Client says : " + messageIn);
+                        printWriter.println("\nClient says : " + messageIn);
                     }
                 } while (!messageIn.equals("bye"));
             } else {
